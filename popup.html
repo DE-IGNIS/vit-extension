@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Attendance App</title>
+  <script src="jsQR.js"></script> <!-- Download from https://github.com/cozmo/jsQR -->
+  <script src="qrcode.min.js"></script> <!-- Download from https://github.com/davidshimjs/qrcodejs -->
+  <style>
+    body { width: 400px; padding: 10px; }
+    video { width: 100%; }
+    canvas { display: none; }
+  </style>
+</head>
+<body>
+  <h2>Attendance App</h2>
+  <div id="login-form">
+    <input id="username" placeholder="Username" />
+    <input id="password" type="password" placeholder="Password" />
+    <select id="role">
+      <option value="teacher">Teacher</option>
+      <option value="student">Student</option>
+    </select>
+    <button id="register-btn">Register</button>
+    <button id="login-btn">Login</button>
+  </div>
+  <div id="teacher-panel" style="display: none;">
+    <button id="create-session-btn">Create Session</button>
+    <div id="qr-code"></div>
+    <button id="view-attendance-btn">View Attendance</button>
+    <p id="attendance-list"></p>
+  </div>
+  <div id="student-panel" style="display: none;">
+    <button id="start-scan-btn">Scan QR</button>
+    <video id="video" autoplay></video>
+    <canvas id="canvas"></canvas>
+  </div>
+  <p id="status"></p>
+  <script src="popup.js"></script>
+</body>
+</html>
